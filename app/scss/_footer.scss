@@ -1,0 +1,136 @@
+.footer {
+  background-color: $darkBlue;
+  color: $white;
+  text-align: center;
+  padding: 40px 0 20px 0;
+
+  .container {
+    @include breakpoint-up(large) {
+      font-size: $font-sm;
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.2fr 3fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "logo link1 link2 cta"
+        "social link1 link2 copyright";
+      justify-items: start;
+    }
+  }
+
+  a {
+    color: $white;
+  }
+
+  &__logo {
+    display: inline-block;
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint-up(large) {
+      grid-area: logo;
+      margin-top: 10px;
+    }
+  }
+
+  &__social {
+    @include breakpoint-down(medium) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint-up(large) {
+      grid-area: social;
+      align-self: end;
+      margin-bottom: 7px;
+    }
+
+    a {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      @include breakpoint-up(large) {
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+
+      // changing color of anchor svg file
+      svg path {
+        transition: fill 150ms ease-in-out;
+      }
+
+      &:hover svg path {
+        fill: $limeGreen;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.5;
+
+    @include breakpoint-up(large) {
+      align-items: start;
+    }
+
+    &.col1 {
+      @include breakpoint-up(large) {
+        grid-area: link1;
+      }
+    }
+
+    &.col2 {
+      @include breakpoint-down(medium) {
+        margin-bottom: 30px;
+      }
+
+      @include breakpoint-up(large) {
+        grid-area: link2;
+      }
+    }
+
+    a {
+      transition: 150ms ease-in-out;
+
+      &:hover {
+        color: $limeGreen;
+      }
+    }
+  }
+
+  &__cta {
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      text-align: right;
+      justify-self: end;
+      margin-top: 10px;
+    }
+
+    button {
+      @include breakpoint-down(medium) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $grayishBlue;
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 20px;
+    }
+
+    @include breakpoint-up(large) {
+      grid-area: copyright;
+      align-self: end;
+      justify-self: end;
+      margin-bottom: 10px;
+    }
+  }
+}

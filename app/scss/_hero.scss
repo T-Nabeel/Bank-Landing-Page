@@ -1,0 +1,75 @@
+.hero {
+  background-color: $veryLightGray;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-image: url("/images/bg-intro-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 300px;
+    //z-index: -1;
+
+    @include breakpoint-up(large) {
+      //flex: 3;
+      order: 2;
+      background-image: url("/images/bg-intro-desktop.svg");
+      height: 717px;
+      right: -112px;
+      background-size: 176%;
+      background-position: 1% 60%;
+      width: 302%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("/images/image-mockups.png");
+      background-size: 93%;
+      background-repeat: no-repeat;
+      background-position: center -125px;
+      height: 100%;
+      width: 100%;
+      // z-index: -2;
+    }
+
+    // image for desktop custom
+    @include breakpoint-up(large) {
+      &::before {
+        content: "";
+        background-image: url("/images/image-mockups.png");
+        //right: -190px;
+        background-position: 201px -125px;
+        height: 120%;
+        width: 100%;
+        right: 0px;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin: 0 20px 0 20px;
+
+    @include breakpoint-up(large) {
+      //flex: 0.7;
+      //flex: 1.5;
+      //order: 1;
+      text-align: left;
+      min-width: 30%;
+      height: 405px
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 35px;
+    }
+  }
+}
