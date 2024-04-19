@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Easybank landing page](https://t-nabeel.github.io/FrontEndMentor-Bank-Landing-Page/)
+- Live Site URL: [Easybank landing page](https://t-nabeel.github.io/fem-bank-landing-page/)
 
 ## My process
 
